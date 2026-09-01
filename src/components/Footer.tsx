@@ -110,6 +110,7 @@
 //     </footer>
 //   );
 // };
+import Image from "next/image";
 import Link from "next/link";
 import type React from "react";
 import { FOOTER_LOGO_URL } from "../data/mockData";
@@ -120,10 +121,11 @@ export const Footer: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-4 sm:px-6 md:px-12 py-16 w-full max-w-7xl mx-auto">
         {/* Brand Column */}
         <div className="col-span-1 md:col-span-1 flex flex-col items-start">
-          {/* biome-ignore lint/performance/noImgElement: Remote CDN logo kept as plain img to match source design */}
-          <img
+          <Image
             src={FOOTER_LOGO_URL}
             alt="24MAGIC Logo"
+            width={819}
+            height={335}
             className="h-10 w-auto object-contain mb-4 block"
           />
           <p className="text-sm text-[#584145] leading-relaxed">
@@ -184,11 +186,11 @@ export const Footer: React.FC = () => {
           </p>
           <p>
             24MAGIC provides bookkeeping, transaction reconciliation, and
-            financial back-office support services for businesses.
-            24MAGIC is not a Certified Public Accounting (CPA) firm and does not
-            provide licensed public accounting services, including audits,
-            attestations, examinations, reviews, certifications, or any other
-            services requiring CPA licensure.
+            financial back-office support services for businesses. 24MAGIC is
+            not a Certified Public Accounting (CPA) firm and does not provide
+            licensed public accounting services, including audits, attestations,
+            examinations, reviews, certifications, or any other services
+            requiring CPA licensure.
           </p>
           <p>
             Our services are designed to support your everyday bookkeeping and
@@ -202,7 +204,8 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-[#dfbfc3]/30 text-center">
           <p className="text-xs text-[#584145]/80">
-            © 2026 24MAGIC Bookkeeping & Back-Office Support. All rights reserved.
+            © 2026 24MAGIC Bookkeeping & Back-Office Support. All rights
+            reserved.
           </p>
         </div>
       </div>

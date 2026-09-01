@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type React from "react";
 import type { ServiceItem } from "../types";
@@ -27,11 +28,12 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
         <div className="space-y-6 text-left">
           <div className="h-48 w-full rounded-2xl overflow-hidden relative bg-[#fbf1f2]">
-            {/* biome-ignore lint/performance/noImgElement: Remote CDN image kept as plain img to match source design */}
-            <img
+            <Image
               src={service.imageUrl}
               alt={service.alt}
-              className="w-full h-full object-cover mix-blend-multiply"
+              fill
+              sizes="(max-width: 768px) 100vw, 700px"
+              className="object-cover mix-blend-multiply"
             />
             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1 rounded-full text-xs font-bold text-[#830036]">
               {service.pricingEstimate}

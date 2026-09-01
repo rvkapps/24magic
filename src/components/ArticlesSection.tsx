@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type React from "react";
 import { ARTICLES_DATA } from "../data/mockData";
 import type { ArticleItem } from "../types";
@@ -45,11 +46,12 @@ export const ArticlesSection: React.FC<ArticlesSectionProps> = ({
           >
             <div>
               <div className="h-64 w-full overflow-hidden relative">
-                {/* biome-ignore lint/performance/noImgElement: Remote CDN image kept as plain img to match source design */}
-                <img
+                <Image
                   src={article.imageUrl}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-white/90 backdrop-blur-md text-[#830036] font-medium text-xs px-3.5 py-1.5 rounded-full shadow-xs">

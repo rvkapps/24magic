@@ -29,9 +29,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#fff8f8] text-[#1f1a1b]">
       <div className="text-center">
-        <h1 className="text-4xl font-extrabold text-[#830036] mb-4">
-          404
-        </h1>
+        <h1 className="text-4xl font-extrabold text-[#830036] mb-4">404</h1>
         <h2 className="text-2xl font-medium text-[#1f1a1b] mb-6">
           Page Not Found
         </h2>
@@ -44,9 +42,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#830036] text-white font-medium text-sm hover:bg-[#a61d4c] transition-colors"
             aria-label="Go to homepage"
           >
-            <span className="material-symbols-outlined">
-              home
-            </span>
+            <span className="material-symbols-outlined">home</span>
             Homepage
           </a>
           <a
@@ -54,9 +50,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#830036] text-[#830036] font-medium text-sm hover:bg-[#830036]/10 transition-colors"
             aria-label="Contact us"
           >
-            <span className="material-symbols-outlined">
-              contact_mail
-            </span>
+            <span className="material-symbols-outlined">contact_mail</span>
             Contact Us
           </a>
         </div>

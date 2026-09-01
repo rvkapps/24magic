@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type React from "react";
@@ -36,10 +37,12 @@ export const Header: React.FC = () => {
           className="flex items-center gap-2 text-left cursor-pointer focus:outline-hidden"
           aria-label="24MAGIC Home"
         >
-          {/* biome-ignore lint/performance/noImgElement: Remote CDN logo kept as plain img to match source design */}
-          <img
+          <Image
             src={LOGO_URL}
             alt="24MAGIC Logo"
+            width={819}
+            height={335}
+            priority
             className="h-12 md:h-14 w-auto object-contain transition-transform hover:scale-102"
           />
         </Link>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type React from "react";
 
 const HIGHLIGHTS = [
@@ -47,11 +48,13 @@ export const BookkeepingShowcase: React.FC = () => {
 
         {/* Image */}
         <div className="order-1 lg:order-2 relative">
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-[#dfbfc3]/40 will-change-transform">
-            <img
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-[#dfbfc3]/40 will-change-transform relative aspect-[4/3]">
+            <Image
               src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
               alt="Professional bookkeeper working on financial records"
-              className="w-full aspect-[4/3] object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
               loading="lazy"
             />
           </div>

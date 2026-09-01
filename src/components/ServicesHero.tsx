@@ -42,9 +42,8 @@ export const ServicesHero: React.FC = () => {
           <p className="text-base sm:text-lg text-[#584145] max-w-xl font-normal leading-relaxed">
             Simplify your operations with professional bookkeeping and dedicated
             business support services tailored to your business. We keep your
-            accounts
-            accurate, your records organized, and your day-to-day administration
-            running seamlessly.
+            accounts accurate, your records organized, and your day-to-day
+            administration running seamlessly.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">

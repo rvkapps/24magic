@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type React from "react";
 
 const STATS = [
@@ -30,11 +31,13 @@ export const SolutionsShowcase: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Image + floating card */}
         <div className="relative">
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-[#dfbfc3]/40 will-change-transform">
-            <img
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-[#dfbfc3]/40 will-change-transform relative aspect-[4/3]">
+            <Image
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
               alt="Team collaborating on business solutions"
-              className="w-full aspect-[4/3] object-cover"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
               loading="lazy"
             />
           </div>

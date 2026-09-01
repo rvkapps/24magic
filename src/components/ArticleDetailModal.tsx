@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type React from "react";
 import type { ArticleItem } from "../types";
@@ -33,11 +34,12 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
 
         <div className="space-y-6 text-left">
           <div className="h-56 w-full rounded-2xl overflow-hidden relative">
-            {/* biome-ignore lint/performance/noImgElement: Remote CDN image kept as plain img to match source design */}
-            <img
+            <Image
               src={article.imageUrl}
               alt={article.title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 700px"
+              className="object-cover"
             />
           </div>
 

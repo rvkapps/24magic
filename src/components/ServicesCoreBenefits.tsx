@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type React from "react";
 
 const CORE_BENEFITS = [
@@ -41,10 +42,12 @@ export const ServicesCoreBenefits: React.FC = () => {
           >
             {/* Image */}
             <div className="relative h-48 overflow-hidden">
-              <img
+              <Image
                 src={benefit.image}
                 alt={benefit.alt}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
