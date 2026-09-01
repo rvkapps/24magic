@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import type React from "react";
 import { useState } from "react";
 import { LOGO_URL } from "../data/mockData";
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const router = useRouter();
   const pathname = usePathname();
 
   const navItems = [
@@ -21,12 +20,6 @@ export const Header: React.FC = () => {
 
   const getIsActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
-
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    router.push(href);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
   return (
     <nav className="bg-white sticky top-0 z-50 border-b border-[#dfbfc3]/40 shadow-xs transition-all duration-300">
@@ -52,10 +45,9 @@ export const Header: React.FC = () => {
           {navItems.map((item) => {
             const isActive = getIsActive(item.href);
             return (
-              <button
-                type="button"
+              <Link
                 key={item.id}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
                 className={`text-xs lg:text-sm font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer py-1 ${
                   isActive
                     ? "text-[#830036] border-b-2 border-[#830036]"
@@ -63,20 +55,19 @@ export const Header: React.FC = () => {
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             );
           })}
         </div>
 
         {/* Desktop CTA Action Buttons */}
         <div className="hidden md:flex items-center gap-3.5">
-          <button
-            type="button"
-            onClick={() => router.push("/contact")}
+          <Link
+            href="/contact"
             className="text-xs lg:text-sm font-semibold uppercase tracking-wider text-white btn-gradient px-5 py-2 rounded-full cursor-pointer hover:shadow-md"
           >
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle Button */}
@@ -97,10 +88,10 @@ export const Header: React.FC = () => {
         <div className="md:hidden bg-[#fff8f8] border-b border-[#dfbfc3]/40 px-6 py-6 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
-              <button
-                type="button"
+              <Link
                 key={item.id}
-                onClick={() => handleNavClick(item.href)}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
                 className={`text-left py-2 px-3 text-sm font-semibold uppercase tracking-wider rounded-lg transition-colors ${
                   getIsActive(item.href)
                     ? "bg-[#a61d4c]/10 text-[#830036] font-bold"
@@ -108,21 +99,18 @@ export const Header: React.FC = () => {
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </div>
 
           <div className="pt-4 border-t border-[#dfbfc3]/40 flex flex-col gap-3">
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                router.push("/contact");
-              }}
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="w-full text-center text-sm font-semibold uppercase tracking-wider text-white btn-gradient py-3 rounded-full"
             >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       )}
