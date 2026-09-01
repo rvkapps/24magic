@@ -124,8 +124,7 @@
     </span>
   </header>
   <p class="summary">
-    This is a human-readable view of <code>sitemap.xml</code>, generated for search engines like Google.
-    Submit the raw file at <a class="loc" href="/sitemap.xml">/sitemap.xml</a> in Google Search Console.
+    This is a human-readable view of <code>sitemap.xml</code>, generated for search engines.
   </p>
   <div class="card">
     <table>
