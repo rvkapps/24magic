@@ -14,22 +14,22 @@ export const AboutView: React.FC = () => {
       icon: "schedule",
     },
     {
-      title: "CPA Integrity",
-      desc: "We merge cutting-edge AI automation with certified human CPA review for maximum confidence.",
+      title: "Professional Integrity",
+      desc: "We merge cutting-edge AI automation with careful human expert review for maximum confidence.",
       icon: "shield",
     },
   ];
 
   const team = [
     {
-      name: "Elena Rostova, CPA",
-      role: "Co-Founder & Chief Tax Officer",
-      bio: "Former Big 4 Senior Tax Manager with 14+ years of experience advising scaling SaaS and e-commerce brands.",
+      name: "Elena Rostova",
+      role: "Co-Founder & Head of Client Accounts",
+      bio: "14+ years of experience advising scaling SaaS and e-commerce brands on financial organization and reporting.",
     },
     {
-      name: "Marcus Vance, CPA",
+      name: "Marcus Vance",
       role: "Head of Client Reconciliation",
-      bio: "Certified Public Accountant specializing in GAAP compliance, forensic cleanup, and internal control frameworks.",
+      bio: "Specializes in bookkeeping cleanup, reconciliation accuracy, and internal control frameworks.",
     },
     {
       name: "David Chen",
@@ -51,7 +51,7 @@ export const AboutView: React.FC = () => {
         <p className="text-base sm:text-lg text-[#584145] leading-relaxed">
           We built 24MAGIC to solve a fundamental problem: small business owners
           were losing hundreds of hours every year fighting accounting software,
-          or paying fortune fees for outdated CPA firms.
+          or paying fortune fees for outdated accounting firms.
         </p>
       </div>
 
@@ -78,7 +78,7 @@ export const AboutView: React.FC = () => {
       {/* Team */}
       <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#dfbfc3]/40 shadow-xs">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1f1a1b] text-center mb-8">
-          Meet Our CPA Advisory Leadership
+          Meet Our Leadership Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team.map((m) => (

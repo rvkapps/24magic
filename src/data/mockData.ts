@@ -42,7 +42,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Interactive executive financial dashboard",
       "Real-time Cash Flow Forecasting (30-90 days)",
       "Custom unit economics & gross margin analysis",
-      "Monthly video walk-through from dedicated CPA",
+      "Monthly video walk-through from dedicated bookkeeping specialist",
     ],
     pricingEstimate: "Included in Growth & Scale plans",
   },
@@ -105,7 +105,7 @@ export const ARTICLES_DATA: ArticleItem[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
     readTime: "12 min read",
-    author: "Lead CPA Reviewer",
+    author: "Lead Bookkeeping Reviewer",
   },
   {
     id: "tax-saving-strategies-2026",
@@ -247,13 +247,13 @@ export const PLANS_DATA: PlanItem[] = [
     priceMonthly: 599,
     priceAnnual: 499,
     description:
-      "Designed for scaling businesses that need proactive insights and dedicated CPA oversight.",
+      "Designed for scaling businesses that need proactive insights and dedicated expert oversight.",
     monthlyTxLimit: "Up to 250 monthly transactions",
     features: [
       "Bi-weekly transaction reconciliation",
       "Interactive executive dashboard",
       "Cash flow forecasting (30 days)",
-      "Dedicated CPA point of contact",
+      "Dedicated bookkeeping specialist point of contact",
       "Receipt & invoice matching",
       "Quarterly tax review call",
     ],

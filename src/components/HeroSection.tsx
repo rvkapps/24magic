@@ -18,7 +18,7 @@ const BARS = [40, 55, 48, 62, 58, 70, 66, 78, 74, 85, 80, 96].map(
 );
 
 const TRUST_ITEMS = [
-  { icon: "verified_user", label: "Certified CPAs" },
+  { icon: "verified_user", label: "Expert Bookkeeping Team" },
   { icon: "app_registration", label: "QuickBooks Ready" },
   { icon: "lock", label: "Read-Only Secure" },
   { icon: "support_agent", label: "Dedicated Human Support" },
@@ -210,7 +210,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
             <div>
               <p className="text-xs font-bold text-[#1f1a1b]">
-                CPA Reviewed Monthly
+                Expert Reviewed Monthly
               </p>
               <p className="text-[10px] text-[#584145]">GAAP standards</p>
             </div>

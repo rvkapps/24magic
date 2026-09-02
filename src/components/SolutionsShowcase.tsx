@@ -20,8 +20,8 @@ const HIGHLIGHTS = [
   },
   {
     icon: "verified",
-    title: "CPA-Quality, Always",
-    desc: "Every reconciliation is reviewed by a Senior CPA — audit-ready, year-round.",
+    title: "Professional-Quality, Always",
+    desc: "Every reconciliation is reviewed by a senior bookkeeping specialist — audit-ready, year-round.",
   },
 ];
 
@@ -68,7 +68,7 @@ export const SolutionsShowcase: React.FC = () => {
 
             <p className="text-sm sm:text-base text-[#584145] leading-relaxed max-w-lg">
               From solo founders to multi-channel agencies, 24MAGIC replaces
-              fragmented spreadsheets with one automated, CPA-reviewed
+              fragmented spreadsheets with one automated, expert-reviewed
               bookkeeping engine.
             </p>
           </div>

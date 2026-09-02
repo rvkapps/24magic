@@ -44,7 +44,7 @@ export const ResourcesView: React.FC<ResourcesViewProps> = ({
         </h1>
         <p className="text-base sm:text-lg text-[#584145]">
           Step-by-step masterclasses, QuickBooks Online cleanup tutorials, and
-          tax write-off playbooks written by senior CPAs.
+          tax write-off playbooks written by senior bookkeeping specialists.
         </p>
       </div>
 

@@ -203,7 +203,7 @@ export function TermsOfServicePageView() {
                   does not provide licensed public accounting services,
                   including audits, attestations, examinations, reviews, or
                   certifications requiring CPA licensure. All books are reviewed
-                  by individual CPA partners.
+                  by our senior bookkeeping specialists.
                 </p>
               </div>
             </div>

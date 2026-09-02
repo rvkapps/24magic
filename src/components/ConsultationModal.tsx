@@ -67,7 +67,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             <p className="text-sm text-[#584145] max-w-md mx-auto">
               Thank you,{" "}
               <strong className="text-[#1f1a1b]">{formData.name}</strong>. A
-              24MAGIC Senior CPA has reserved your discovery call slot for{" "}
+              24MAGIC bookkeeping specialist has reserved your discovery call slot for{" "}
               <strong className="text-[#830036]">
                 {formData.preferredDate || "tomorrow"} at{" "}
                 {formData.preferredTime}
@@ -99,7 +99,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               </h3>
               <p className="text-xs sm:text-sm text-[#584145]">
                 Let's discuss your financial workflows, ledger pain points, and
-                growth goals with a dedicated CPA.
+                growth goals with a dedicated bookkeeping specialist.
               </p>
             </div>
 

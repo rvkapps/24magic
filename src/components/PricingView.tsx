@@ -29,7 +29,7 @@ export const PricingView: React.FC = () => {
           Simple, Predictable Financial Plans
         </h1>
         <p className="text-base sm:text-lg text-[#584145]">
-          No hidden hourly fees. Just clean books, dedicated CPA oversight, and
+          No hidden hourly fees. Just clean books, dedicated expert oversight, and
           complete financial peace of mind.
         </p>
 

@@ -5,7 +5,7 @@ const HIGHLIGHTS = [
   "95% automated transaction matching",
   "5-minute daily review dashboard",
   // "Tax-ready books year-round",
-  "Dedicated CPA for every account",
+  "Dedicated bookkeeping specialist for every account",
 ];
 
 export const BookkeepingShowcase: React.FC = () => {
@@ -26,7 +26,7 @@ export const BookkeepingShowcase: React.FC = () => {
           </h2>
 
           <p className="text-base text-[#584145] leading-relaxed">
-            We take the hassle out of bookkeeping. Our expert CPAs handle every
+            We take the hassle out of bookkeeping. Our expert bookkeepers handle every
             transaction so you can focus on growing your business — no
             spreadsheets, no guesswork, no month-end panic.
           </p>

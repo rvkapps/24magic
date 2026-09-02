@@ -61,7 +61,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 Executive Summary
               </h3>
               <p>
-                In this masterclass, our senior CPA advisory team breaks down
+                In this masterclass, our senior bookkeeping advisory team breaks down
                 the exact 5-minute daily checklist required to eliminate
                 month-end closing chaos.
               </p>
@@ -101,7 +101,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 Need help implementing this in QBO or Xero?
               </h4>
               <p className="text-xs text-[#584145]">
-                Our CPAs can set up your bookkeeping engine for you.
+                Our specialists can set up your bookkeeping engine for you.
               </p>
             </div>
             <button
@@ -112,7 +112,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               }}
               className="btn-gradient text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full whitespace-nowrap cursor-pointer"
             >
-              Get CPA Setup
+              Get Expert Setup
             </button>
           </div>
         </div>
