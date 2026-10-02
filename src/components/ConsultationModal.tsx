@@ -67,7 +67,8 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             <p className="text-sm text-[#584145] max-w-md mx-auto">
               Thank you,{" "}
               <strong className="text-[#1f1a1b]">{formData.name}</strong>. A
-              24MAGIC bookkeeping specialist has reserved your discovery call slot for{" "}
+              24MAGIC bookkeeping specialist has reserved your discovery call
+              slot for{" "}
               <strong className="text-[#830036]">
                 {formData.preferredDate || "tomorrow"} at{" "}
                 {formData.preferredTime}

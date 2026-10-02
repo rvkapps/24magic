@@ -61,8 +61,8 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 Executive Summary
               </h3>
               <p>
-                In this masterclass, our senior bookkeeping advisory team breaks down
-                the exact 5-minute daily checklist required to eliminate
+                In this masterclass, our senior bookkeeping advisory team breaks
+                down the exact 5-minute daily checklist required to eliminate
                 month-end closing chaos.
               </p>
 

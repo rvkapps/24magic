@@ -231,7 +231,7 @@ export const PLANS_DATA: PlanItem[] = [
     priceMonthly: 299,
     priceAnnual: 249,
     description:
-      "Ideal for solopreneurs & early-stage businesses looking for clean, accurate books.",
+      "Bookkeeping and monthly financial reporting for freelancers, solopreneurs, and early-stage businesses.",
     monthlyTxLimit: "Up to 75 monthly transactions",
     features: [
       "Monthly bank & card reconciliation",
@@ -247,7 +247,7 @@ export const PLANS_DATA: PlanItem[] = [
     priceMonthly: 599,
     priceAnnual: 499,
     description:
-      "Designed for scaling businesses that need proactive insights and dedicated expert oversight.",
+      "Bookkeeping, reporting, and a dedicated specialist for growing small businesses and agencies.",
     monthlyTxLimit: "Up to 250 monthly transactions",
     features: [
       "Bi-weekly transaction reconciliation",
@@ -265,8 +265,8 @@ export const PLANS_DATA: PlanItem[] = [
     priceMonthly: 1199,
     priceAnnual: 999,
     description:
-      "Tailored for multi-entity businesses, e-commerce, or complex inventory operations.",
-    monthlyTxLimit: "Unlimited transactions",
+      "Bookkeeping, reporting, tax support, and payroll for multi-entity, e-commerce, and inventory-heavy businesses.",
+    monthlyTxLimit: "Unlimited transactions within agreed scope",
     features: [
       "Daily bank & merchant feeds",
       "Multi-currency & multi-entity support",

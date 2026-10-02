@@ -1,11 +1,10 @@
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type React from "react";
 import { useState } from "react";
 import { PLANS_DATA } from "../data/mockData";
 import { ConsultationCta } from "./ConsultationCta";
 
 export const PricingView: React.FC = () => {
-  const router = useRouter();
   const [isAnnual, setIsAnnual] = useState(true);
   const [estimatedTxs, setEstimatedTxs] = useState(120);
 
@@ -29,8 +28,8 @@ export const PricingView: React.FC = () => {
           Simple, Predictable Financial Plans
         </h1>
         <p className="text-base sm:text-lg text-[#584145]">
-          No hidden hourly fees. Just clean books, dedicated expert oversight, and
-          complete financial peace of mind.
+          No hidden hourly fees. Just clean books, dedicated expert oversight,
+          and complete financial peace of mind.
         </p>
 
         {/* Toggle Billing Period */}
@@ -93,7 +92,7 @@ export const PricingView: React.FC = () => {
       </div>
 
       {/* Pricing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         {PLANS_DATA.map((plan) => {
           const price = isAnnual ? plan.priceAnnual : plan.priceMonthly;
           const isRecommended = plan.id === recommendedId;
@@ -101,78 +100,50 @@ export const PricingView: React.FC = () => {
           return (
             <div
               key={plan.id}
-              className={`rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between relative ${
-                plan.popular || isRecommended
-                  ? "bg-white border-2 border-[#830036] shadow-xl scale-102 z-10"
-                  : "bg-white border border-[#dfbfc3]/40 shadow-xs hover:shadow-md"
+              className={`relative rounded-3xl p-8 flex flex-col text-center transition-all duration-300 bg-white ${
+                isRecommended
+                  ? "order-first md:order-none border-2 border-[#830036] shadow-xl md:-translate-y-2"
+                  : "border border-[#dfbfc3]/40 shadow-xs hover:shadow-md"
               }`}
             >
-              {(plan.popular || isRecommended) && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="btn-gradient text-white text-[10px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-xs">
-                    {isRecommended ? "Recommended Match" : "Most Popular"}
-                  </span>
-                </div>
+              {isRecommended && (
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 btn-gradient text-white text-[10px] font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-xs whitespace-nowrap">
+                  Recommended Match
+                </span>
               )}
 
-              <div>
-                <h3 className="text-xl font-bold text-[#1f1a1b]">
-                  {plan.name}
-                </h3>
-                <p className="text-xs text-[#584145] mt-1 mb-4 h-10">
-                  {plan.description}
+              <h3 className="text-xl font-bold text-[#1f1a1b]">{plan.name}</h3>
+              <p className="text-xs text-[#584145] mt-2 min-h-10">
+                {plan.description}
+              </p>
+
+              <div className="my-6">
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="text-5xl font-extrabold text-[#1f1a1b]">
+                    ${price}
+                  </span>
+                  <span className="text-xs font-semibold text-[#584145]">
+                    / month
+                  </span>
+                </div>
+                <p className="text-[11px] text-emerald-700 font-semibold mt-1 min-h-4">
+                  {isAnnual ? `Billed annually ($${price * 12}/yr)` : ""}
                 </p>
-
-                <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold text-[#1f1a1b]">
-                      ${price}
-                    </span>
-                    <span className="text-xs font-semibold text-[#584145]">
-                      / month
-                    </span>
-                  </div>
-                  {isAnnual && (
-                    <p className="text-[11px] text-emerald-700 font-semibold mt-1">
-                      Billed annually (${price * 12}/yr)
-                    </p>
-                  )}
-                  <p className="text-xs text-[#875200] font-semibold mt-2 bg-[#ffb55b]/15 px-3 py-1 rounded-lg inline-block">
-                    {plan.monthlyTxLimit}
-                  </p>
-                </div>
-
-                <div className="space-y-3 pt-4 border-t border-[#dfbfc3]/30">
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#1f1a1b]">
-                    Included Features:
-                  </p>
-                  {plan.features.map((feat) => (
-                    <div
-                      key={feat}
-                      className="flex items-start gap-2 text-xs text-[#584145]"
-                    >
-                      <span className="material-symbols-outlined text-sm text-[#830036] mt-0.5">
-                        check_circle
-                      </span>
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
+                <p className="text-xs text-[#875200] font-semibold mt-3 bg-[#ffb55b]/15 px-3 py-1 rounded-lg inline-block">
+                  {plan.monthlyTxLimit}
+                </p>
               </div>
 
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => router.push("/contact")}
-                  className={`w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider cursor-pointer transition-all ${
-                    plan.popular || isRecommended
-                      ? "btn-gradient text-white shadow-md hover:shadow-xl"
-                      : "border border-[#830036] text-[#830036] hover:bg-[#fbf1f2]"
-                  }`}
-                >
-                  Select {plan.name}
-                </button>
-              </div>
+              <Link
+                href="/contact"
+                className={`mt-auto w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
+                  isRecommended
+                    ? "btn-gradient text-white shadow-md hover:shadow-xl"
+                    : "border border-[#830036] text-[#830036] hover:bg-[#fbf1f2]"
+                }`}
+              >
+                Contact Us
+              </Link>
             </div>
           );
         })}

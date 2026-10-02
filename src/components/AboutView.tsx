@@ -20,24 +20,6 @@ export const AboutView: React.FC = () => {
     },
   ];
 
-  const team = [
-    {
-      name: "Elena Rostova",
-      role: "Co-Founder & Head of Client Accounts",
-      bio: "14+ years of experience advising scaling SaaS and e-commerce brands on financial organization and reporting.",
-    },
-    {
-      name: "Marcus Vance",
-      role: "Head of Client Reconciliation",
-      bio: "Specializes in bookkeeping cleanup, reconciliation accuracy, and internal control frameworks.",
-    },
-    {
-      name: "David Chen",
-      role: "VP of Financial Automation",
-      bio: "Ex-Fintech Lead Engineer dedicated to building seamless read-only bank feeds and real-time ledger matching.",
-    },
-  ];
-
   return (
     <div className="py-12 md:py-16 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto space-y-16">
       {/* Title */}
@@ -73,31 +55,6 @@ export const AboutView: React.FC = () => {
             </p>
           </div>
         ))}
-      </div>
-
-      {/* Team */}
-      <div className="bg-white p-8 sm:p-12 rounded-3xl border border-[#dfbfc3]/40 shadow-xs">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1f1a1b] text-center mb-8">
-          Meet Our Leadership Team
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {team.map((m) => (
-            <div
-              key={m.name}
-              className="p-6 rounded-2xl bg-[#fff8f8] border border-[#dfbfc3]/30"
-            >
-              <div className="w-12 h-12 rounded-full btn-gradient flex items-center justify-center text-white font-bold mb-4">
-                {m.name.split(" ")[0][0]}
-                {m.name.split(" ")[1][0]}
-              </div>
-              <h4 className="text-base font-bold text-[#1f1a1b]">{m.name}</h4>
-              <p className="text-xs font-semibold text-[#830036] mb-3">
-                {m.role}
-              </p>
-              <p className="text-xs text-[#584145] leading-relaxed">{m.bio}</p>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Book Free Consultation */}

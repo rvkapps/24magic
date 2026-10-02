@@ -26,8 +26,8 @@ export const BookkeepingShowcase: React.FC = () => {
           </h2>
 
           <p className="text-base text-[#584145] leading-relaxed">
-            We take the hassle out of bookkeeping. Our expert bookkeepers handle every
-            transaction so you can focus on growing your business — no
+            We take the hassle out of bookkeeping. Our expert bookkeepers handle
+            every transaction so you can focus on growing your business — no
             spreadsheets, no guesswork, no month-end panic.
           </p>
 
