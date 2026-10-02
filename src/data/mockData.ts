@@ -129,6 +129,9 @@ export const ARTICLES_DATA: ArticleItem[] = [
   },
 ];
 
+// PLACEHOLDER DATA: these testimonials are dummy content for development only.
+// Replace with real, permission-approved client reviews (or hide the section)
+// before launch.
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
     id: "1",
@@ -146,7 +149,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     author: "Michael R.",
     role: "Bookkeeping Firm Owner",
     initials: "MR",
-    rating: 5,
+    rating: 4,
   },
   {
     id: "3",
@@ -173,7 +176,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     author: "Priya S.",
     role: "E-Commerce Owner",
     initials: "PS",
-    rating: 5,
+    rating: 4,
   },
   {
     id: "6",
@@ -209,7 +212,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     author: "Nina K.",
     role: "DTC Brand Founder",
     initials: "NK",
-    rating: 5,
+    rating: 3,
   },
   {
     id: "10",

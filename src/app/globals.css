@@ -532,3 +532,7 @@ body {
     font-size: 10px;
   }
 }
+
+.font-fill {
+  font-variation-settings: "FILL" 1;
+}

@@ -62,10 +62,12 @@ export const TestimonialsSection: React.FC = () => {
             >
               <div>
                 <div className="flex gap-1 mb-4 text-[#875200]">
-                  {STAR_SLOTS.slice(0, item.rating).map((s) => (
+                  {STAR_SLOTS.map((s) => (
                     <span
                       key={s}
-                      className="material-symbols-outlined text-sm font-fill"
+                      className={`material-symbols-outlined text-sm font-fill ${
+                        s < item.rating ? "" : "text-[#dfbfc3]"
+                      }`}
                     >
                       star
                     </span>
