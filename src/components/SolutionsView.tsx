@@ -23,7 +23,6 @@ export const SolutionsView: React.FC = () => {
       points: [
         "Automated bank feed synchronization",
         "Clean month-end financial binder",
-        "Quarterly estimated tax alerts",
         "Direct email/portal access to your account specialist",
       ],
       icon: "storefront",

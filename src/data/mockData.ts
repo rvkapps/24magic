@@ -16,7 +16,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     shortDesc:
       "Meticulous recording of daily financial transactions, ensuring every digit is accounted for with absolute precision. We maintain your ledgers so you can focus on scaling.",
     fullDesc:
-      "Our Bookkeeping engine automates feed matching, auto-categorization, and receipt auditing. Your books are audited daily and closed before the 5th of every month.",
+      "Our Bookkeeping engine automates feed matching, auto-categorization, and receipt matching. Your books are reviewed daily and closed before the 5th of every month.",
     imageUrl:
       "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=800&q=80",
     alt: "Accounting documents and a calculator on a clean desk",
@@ -50,33 +50,31 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "tax-preparation",
     title: "Tax Preparation",
     shortDesc:
-      "Proactive tax strategy and flawless compliance. We navigate complex tax codes to optimize your liabilities and ensure impeccable filings year-round.",
+      "Tax-ready bookkeeping support. We keep your records organized and up to date so your tax professional has everything they need at tax time.",
     fullDesc:
-      "Don’t wait until April. We integrate tax planning into monthly bookkeeping, identifying write-offs, R&D credits, and section 179 deductions in real-time.",
+      "Don’t wait until April. We keep your books organized and categorized every month, so your records are ready to hand to your tax professional.",
     imageUrl:
       "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=800&q=80",
     alt: "Tax forms and a calculator on a desk",
     features: [
-      "Year-round tax deduction strategy",
-      "State & Federal business tax filing (1120S, 1065, Schedule C)",
-      "Quarterly estimated tax calculations",
-      "Audit protection guarantee",
+      "Year-round expense categorization",
+      "Organized records for your tax professional",
+      "Year-end bookkeeping closing package",
     ],
     pricingEstimate: "Add-on or standalone from $499",
   },
   {
     id: "payroll-management",
-    title: "Payroll Management",
+    title: "Payroll Support",
     shortDesc:
-      "Seamless, accurate, and timely payroll processing. We handle the intricacies of payroll taxes, benefits deductions, and direct deposits seamlessly.",
+      "Accurate, organized payroll support. We help you keep payroll records, benefits deductions, and payments tracked and reconciled in your books.",
     fullDesc:
-      "Automated payroll for W-2 employees and 1099 contractors with Gusto/ADP/Rippling integration, multi-state filings, and automated tax withholding.",
+      "Payroll support for W-2 employees and 1099 contractors, with payroll records reconciled to your books from platforms like Gusto, ADP, and Rippling.",
     imageUrl:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80",
     alt: "Stack of dollar bills representing payroll",
     features: [
-      "Full W-2 and 1099 payroll execution",
-      "Automated payroll tax filings & W-2 issuance",
+      "Payroll record keeping for W-2 employees and 1099 contractors",
       "Direct sync with general ledger bookkeeping",
       "Benefits & workers comp allocation tracking",
     ],
@@ -116,7 +114,7 @@ export const ARTICLES_DATA: ArticleItem[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80",
     readTime: "6 min read",
-    author: "Senior Tax Counsel",
+    author: "24MAGIC Bookkeeping Team",
   },
   {
     id: "5-minute-daily-financial-habit",
@@ -146,7 +144,7 @@ export const TESTIMONIALS_DATA: TestimonialItem[] = [
     quote:
       '"Professional, clear, and incredibly efficient. Best investment for my bookkeeping firm and client reporting."',
     author: "Michael R.",
-    role: "Senior Accountant",
+    role: "Bookkeeping Firm Owner",
     initials: "MR",
     rating: 5,
   },
@@ -255,7 +253,6 @@ export const PLANS_DATA: PlanItem[] = [
       "Cash flow forecasting (30 days)",
       "Dedicated bookkeeping specialist point of contact",
       "Receipt & invoice matching",
-      "Quarterly tax review call",
     ],
     popular: true,
   },
@@ -265,15 +262,14 @@ export const PLANS_DATA: PlanItem[] = [
     priceMonthly: 1199,
     priceAnnual: 999,
     description:
-      "Bookkeeping, reporting, tax support, and payroll for multi-entity, e-commerce, and inventory-heavy businesses.",
+      "Bookkeeping, reporting, and payroll support for multi-entity, e-commerce, and inventory-heavy businesses.",
     monthlyTxLimit: "Unlimited transactions within agreed scope",
     features: [
       "Daily bank & merchant feeds",
       "Multi-currency & multi-entity support",
       "Custom ERP/QBO/NetSuite sync",
-      "Full Payroll & Tax preparation included",
+      "Payroll support included",
       "24/7 Priority advisory team access",
-      "Dedicated CFO strategic partner",
     ],
   },
 ];

@@ -200,7 +200,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     "Bookkeeping",
                     "Financial Reporting",
                     "Tax Preparation",
-                    "Payroll Management",
+                    "Payroll Support",
                   ].map((srv) => {
                     const selected = formData.servicesNeeded.includes(srv);
                     return (

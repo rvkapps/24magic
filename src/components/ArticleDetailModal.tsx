@@ -85,7 +85,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               </p>
 
               <h4 className="text-sm font-bold text-[#1f1a1b] pt-2">
-                3. Perform 300-Second Daily Audits
+                3. Perform 300-Second Daily Reviews
               </h4>
               <p>
                 Spend 5 minutes every morning checking uncategorized feed items.

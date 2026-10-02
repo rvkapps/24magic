@@ -21,7 +21,7 @@ const HIGHLIGHTS = [
   {
     icon: "verified",
     title: "Professional-Quality, Always",
-    desc: "Every reconciliation is reviewed by a senior bookkeeping specialist — audit-ready, year-round.",
+    desc: "Every reconciliation is reviewed by a senior bookkeeping specialist, year-round.",
   },
 ];
 

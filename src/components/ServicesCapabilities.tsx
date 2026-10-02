@@ -102,7 +102,6 @@ const CAPABILITIES: Capability[] = [
     title: "Administrative Support",
     desc: "Free up valuable time by outsourcing the day-to-day administrative tasks that keep your business running. From managing paperwork and customer invoicing to organizing records and coordinating schedules, we provide reliable business support services tailored to your workflow.",
     features: [
-      "Credentialing support & CME tracking",
       "Scheduling assistance & calendar management",
       "Timecard processing & expense submissions",
       "Business correspondence & administrative organization",
