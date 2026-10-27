@@ -13,6 +13,7 @@ export const Header: React.FC = () => {
     { id: "home", label: "Home", href: "/" },
     { id: "services", label: "Services", href: "/services" },
     { id: "solutions", label: "Solutions", href: "/solutions" },
+    { id: "tools", label: "Tools", href: "/tools" },
     { id: "pricing", label: "Pricing", href: "/pricing" },
     { id: "about", label: "About Us", href: "/about" },
     { id: "resources", label: "Resources", href: "/resources" },
@@ -41,14 +42,14 @@ export const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-7 lg:gap-9">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-9">
           {navItems.map((item) => {
             const isActive = getIsActive(item.href);
             return (
               <Link
                 key={item.id}
                 href={item.href}
-                className={`text-xs lg:text-sm font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer py-1 ${
+                className={`text-xs xl:text-sm font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 cursor-pointer py-1 ${
                   isActive
                     ? "text-[#830036] border-b-2 border-[#830036]"
                     : "text-[#584145] hover:text-[#830036]"
@@ -61,10 +62,10 @@ export const Header: React.FC = () => {
         </div>
 
         {/* Desktop CTA Action Buttons */}
-        <div className="hidden md:flex items-center gap-3.5">
+        <div className="hidden lg:flex items-center gap-3.5">
           <Link
             href="/contact"
-            className="text-xs lg:text-sm font-semibold uppercase tracking-wider text-white btn-gradient px-5 py-2 rounded-full cursor-pointer hover:shadow-md"
+            className="text-xs xl:text-sm font-semibold uppercase tracking-wider whitespace-nowrap text-white btn-gradient px-5 py-2 rounded-full cursor-pointer hover:shadow-md"
           >
             Get Started
           </Link>
@@ -74,7 +75,7 @@ export const Header: React.FC = () => {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-[#584145] p-2 rounded-lg hover:bg-[#fbf1f2] transition-colors"
+          className="lg:hidden text-[#584145] p-2 rounded-lg hover:bg-[#fbf1f2] transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           <span className="material-symbols-outlined text-2xl">
@@ -85,7 +86,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#fff8f8] border-b border-[#dfbfc3]/40 px-6 py-6 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden bg-[#fff8f8] border-b border-[#dfbfc3]/40 px-6 py-6 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <Link

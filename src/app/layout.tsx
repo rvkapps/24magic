@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | 24MAGIC",
   },
   description:
-    "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
+    "Bookkeeping, document management and administrative support for US small businesses. QuickBooks Online ready, with a dedicated specialist.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "24MAGIC",
     title: "24MAGIC | Bookkeeping & Financial Precision",
     description:
-      "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
+      "Bookkeeping, document management and administrative support for US small businesses. QuickBooks Online ready, with a dedicated specialist.",
     images: [
       {
         url: "/og-image.jpg",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "24MAGIC | Bookkeeping & Financial Precision",
     description:
-      "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
+      "Bookkeeping, document management and administrative support for US small businesses. QuickBooks Online ready, with a dedicated specialist.",
     images: ["/og-image.jpg"],
   },
 };
@@ -50,7 +50,7 @@ const organizationJsonLd = {
   url: "https://24magic.in",
   logo: "https://24magic.in/logo.png",
   description:
-    "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
+    "Bookkeeping, document management and administrative support for US small businesses. QuickBooks Online ready, with a dedicated specialist.",
   email: "contact@24magic.in",
 };
 

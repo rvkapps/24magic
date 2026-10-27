@@ -1,8 +1,7 @@
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type React from "react";
 
 export const ConsultationCta: React.FC = () => {
-  const router = useRouter();
   return (
     <section className="py-16 md:py-20 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto my-4 md:my-8">
       <div className="btn-gradient relative overflow-hidden rounded-[2rem] shadow-xl">
@@ -38,16 +37,15 @@ export const ConsultationCta: React.FC = () => {
 
           {/* Action */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-4">
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
+            <Link
+              href="/contact"
               className="bg-white hover:bg-[#fbf1f2] text-[#830036] font-bold text-xs sm:text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex items-center gap-2"
             >
               <span className="material-symbols-outlined text-base">
                 calendar_month
               </span>
               Book Your Free Consultation
-            </button>
+            </Link>
             <div className="flex items-center gap-2 text-xs text-white/75">
               <span className="material-symbols-outlined text-sm">
                 verified_user

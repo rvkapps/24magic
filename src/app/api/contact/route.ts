@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { PLANS_DATA } from "@/data/mockData";
+import { TOOLS } from "@/data/tools";
 import { renderContactSubmissionEmail } from "@/emails/contact-submission";
 
 const serviceLabels: Record<string, string> = {
-  bookkeeping: "Bookkeeping & Reconciliation",
-  ecommerce: "E-Commerce Accounting",
-  cleanup: "Books Cleanup & Catch-Up",
-  agency: "Agency White-Label",
+  bookkeeping: "Bookkeeping",
+  "document-management": "Document Management",
+  "admin-support": "Administrative Support",
   other: "Not Sure Yet",
 };
 
@@ -35,6 +36,11 @@ export async function POST(request: Request) {
   const serviceKey = String(body.service ?? "bookkeeping");
   const monthlyTxKey = String(body.monthlyTx ?? "under-75");
   const description = String(body.description ?? "").trim();
+  const planId = String(body.plan ?? "");
+  const sourceId = String(body.source ?? "");
+  const plan = PLANS_DATA.find((p) => p.id === planId)?.name;
+  const sourceTool = TOOLS.find((t) => t.slug === sourceId);
+  const source = sourceTool ? `Free tool: ${sourceTool.title}` : undefined;
 
   if (!fullName || !email) {
     return NextResponse.json(
@@ -76,6 +82,8 @@ export async function POST(request: Request) {
         service: serviceLabels[serviceKey] ?? serviceKey,
         monthlyTx: txLabels[monthlyTxKey] ?? monthlyTxKey,
         description,
+        plan,
+        source,
       }),
     });
 

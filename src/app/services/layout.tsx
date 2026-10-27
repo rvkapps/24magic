@@ -4,11 +4,11 @@ import type { ReactNode } from "react";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Bookkeeping & reconciliation, e-commerce accounting, books cleanup, catch-up, and white-label agency support.",
+    "Bookkeeping, document management and administrative support, handled end to end so your business runs smoothly.",
   openGraph: {
     title: "Services | 24MAGIC",
     description:
-      "Bookkeeping & reconciliation, e-commerce accounting, books cleanup, catch-up, and white-label agency support.",
+      "Bookkeeping, document management and administrative support, handled end to end so your business runs smoothly.",
     url: "https://24magic.in/services",
     siteName: "24MAGIC",
     images: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Services | 24MAGIC",
     description:
-      "Bookkeeping & reconciliation, e-commerce accounting, books cleanup, catch-up, and white-label agency support.",
+      "Bookkeeping, document management and administrative support, handled end to end so your business runs smoothly.",
     images: ["/og-image.jpg"],
   },
   alternates: {

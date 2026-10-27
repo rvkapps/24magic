@@ -135,14 +135,14 @@ export const PricingView: React.FC = () => {
               </div>
 
               <Link
-                href="/contact"
+                href={`/contact?plan=${plan.id}`}
                 className={`mt-auto w-full py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
                   isRecommended
                     ? "btn-gradient text-white shadow-md hover:shadow-xl"
                     : "border border-[#830036] text-[#830036] hover:bg-[#fbf1f2]"
                 }`}
               >
-                Contact Us
+                Get Started with {plan.name}
               </Link>
             </div>
           );

@@ -1,9 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PLANS_DATA } from "@/data/mockData";
+import { TOOLS } from "@/data/tools";
 
 const faqs = [
   {
@@ -35,11 +38,30 @@ export function ContactPageView() {
     service: "bookkeeping",
     monthlyTx: "under-75",
     description: "",
+    plan: "",
+    source: "",
   });
+  const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [activeFaq, setActiveFaq] = useState<string | null>(null);
+
+  // Pre-select the plan when arriving from the Pricing page (?plan=growth)
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const planId = params.get("plan");
+    if (planId && PLANS_DATA.some((p) => p.id === planId)) {
+      setFormData((prev) => ({ ...prev, plan: planId }));
+    }
+    const toolSlug = params.get("from");
+    if (toolSlug && TOOLS.some((t) => t.slug === toolSlug)) {
+      setFormData((prev) => ({ ...prev, source: toolSlug }));
+    }
+  }, []);
+
+  const selectedPlan = PLANS_DATA.find((p) => p.id === formData.plan);
+  const sourceTool = TOOLS.find((t) => t.slug === formData.source);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -54,6 +76,16 @@ export function ContactPageView() {
     if (!formData.fullName || !formData.email) {
       setErrorMessage(
         "Please fill out your name and email so we can reach you.",
+      );
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+    if (!consent) {
+      setErrorMessage(
+        "Please agree to the Privacy Policy so we can contact you.",
       );
       return;
     }
@@ -103,8 +135,8 @@ export function ContactPageView() {
             </span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-[#584145] max-w-md mx-auto">
-            Tell us about your business. We'll get back to you within 24–48
-            business hours.
+            Tell us about your business. We'll get back to you within one
+            business day.
           </p>
         </section>
 
@@ -123,6 +155,47 @@ export function ContactPageView() {
                 )}
 
                 <div className="space-y-4">
+                  {selectedPlan && (
+                    <div className="flex items-center justify-between gap-3 rounded-xl bg-[#fbf1f2] px-4 py-3 text-xs text-[#3d2028]">
+                      <span>
+                        Enquiring about the{" "}
+                        <strong className="text-[#830036]">
+                          {selectedPlan.name}
+                        </strong>{" "}
+                        plan
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setFormData((prev) => ({ ...prev, plan: "" }))
+                        }
+                        className="cursor-pointer font-semibold text-[#830036] underline underline-offset-2"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  )}
+
+                  {sourceTool && (
+                    <div className="flex items-center justify-between gap-3 rounded-xl bg-[#fbf1f2] px-4 py-3 text-xs text-[#3d2028]">
+                      <span>
+                        You used the{" "}
+                        <strong className="text-[#830036]">
+                          {sourceTool.title}
+                        </strong>
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setFormData((prev) => ({ ...prev, source: "" }))
+                        }
+                        className="cursor-pointer font-semibold text-[#830036] underline underline-offset-2"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  )}
+
                   {/* Name + Email */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -217,14 +290,13 @@ export function ContactPageView() {
                         onChange={handleInputChange}
                         className="w-full rounded-xl border border-[#dfbfc3]/60 bg-[#fff8f8] px-4 py-2.5 text-sm text-[#1f1a1b] focus:border-[#830036] focus:ring-2 focus:ring-[#830036]/10 focus:outline-none transition-all"
                       >
-                        <option value="bookkeeping">
-                          Bookkeeping &amp; Reconciliation
+                        <option value="bookkeeping">Bookkeeping</option>
+                        <option value="document-management">
+                          Document Management
                         </option>
-                        <option value="ecommerce">E-Commerce Accounting</option>
-                        <option value="cleanup">
-                          Books Cleanup &amp; Catch-Up
+                        <option value="admin-support">
+                          Administrative Support
                         </option>
-                        <option value="agency">Agency White-Label</option>
                         <option value="other">Not Sure Yet</option>
                       </select>
                     </div>
@@ -269,10 +341,37 @@ export function ContactPageView() {
                     />
                   </div>
 
+                  {/* Privacy consent */}
+                  <div className="flex items-start gap-3">
+                    <input
+                      id="privacy-consent"
+                      type="checkbox"
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      required
+                      className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer rounded border-[#dfbfc3] accent-[#830036] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#830036]"
+                    />
+                    <label
+                      htmlFor="privacy-consent"
+                      className="cursor-pointer text-xs leading-relaxed text-[#584145]"
+                    >
+                      I agree to the{" "}
+                      <Link
+                        href="/privacy-policy"
+                        target="_blank"
+                        className="font-semibold text-[#830036] underline underline-offset-2 hover:text-[#a61d4c]"
+                      >
+                        Privacy Policy
+                      </Link>{" "}
+                      and consent to 24MAGIC contacting me about my enquiry.
+                    </label>
+                  </div>
+
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !consent}
+                    aria-disabled={isSubmitting || !consent}
                     className="btn-gradient w-full flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold text-white hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
@@ -324,7 +423,10 @@ export function ContactPageView() {
                       service: "bookkeeping",
                       monthlyTx: "under-75",
                       description: "",
+                      plan: "",
+                      source: "",
                     });
+                    setConsent(false);
                     setIsSubmitted(false);
                   }}
                   className="mt-6 text-xs font-bold text-[#584145] hover:text-[#830036] underline underline-offset-4 cursor-pointer"

@@ -30,7 +30,7 @@ export const ServicesHero: React.FC = () => {
               Our Services
             </span>
             <span className="text-xs md:text-sm font-medium uppercase tracking-[0.2em] text-[#875200] bg-[#ffb55b]/20 px-4 py-1.5 rounded-full italic shadow-xs">
-              Digital - Visible - Magical
+              Digital · Visible · Magical
             </span>
           </div>
 

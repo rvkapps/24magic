@@ -1,11 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import type React from "react";
 import { ARTICLES_DATA } from "../data/mockData";
 import type { ArticleItem } from "../types";
 
 interface ArticlesSectionProps {
   onSelectArticle: (article: ArticleItem) => void;
-  onViewAllResources: () => void;
 }
 
 export const ArticlesSection: React.FC<ArticlesSectionProps> = ({
@@ -25,16 +25,15 @@ export const ArticlesSection: React.FC<ArticlesSectionProps> = ({
             of modern bookkeeping.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={onViewAllResources}
+        <Link
+          href="/resources"
           className="inline-flex items-center text-[#830036] font-semibold text-sm hover:underline group cursor-pointer w-fit"
         >
           View all resources
           <span className="material-symbols-outlined ml-1 group-hover:translate-x-1 transition-transform">
             arrow_forward
           </span>
-        </button>
+        </Link>
       </div>
 
       {/* Grid */}

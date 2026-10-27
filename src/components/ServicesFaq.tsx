@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type React from "react";
 import { useState } from "react";
 
@@ -32,7 +32,6 @@ const FAQS = [
 ];
 
 export const ServicesFaq: React.FC = () => {
-  const router = useRouter();
   const [activeFaq, setActiveFaq] = useState<string | null>(null);
 
   return (
@@ -66,13 +65,12 @@ export const ServicesFaq: React.FC = () => {
                 </p>
               </div>
             </div>
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
-              className="mt-5 w-full btn-gradient text-white text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full shadow-md hover:shadow-xl cursor-pointer"
+            <Link
+              href="/contact"
+              className="mt-5 block w-full text-center btn-gradient text-white text-xs font-semibold uppercase tracking-wider py-3.5 rounded-full shadow-md hover:shadow-xl cursor-pointer"
             >
               Book a Free Consultation
-            </button>
+            </Link>
           </div>
         </div>
 

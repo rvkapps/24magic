@@ -1,18 +1,24 @@
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import type React from "react";
 import { useState } from "react";
 import { ConsultationCta } from "./ConsultationCta";
 import { SolutionsShowcase } from "./SolutionsShowcase";
 
 export const SolutionsView: React.FC = () => {
-  const router = useRouter();
   // Time Savings & ROI Calculator state
   const [monthlyHoursSpent, setMonthlyHoursSpent] = useState(15);
   const [hourlyValue, setHourlyValue] = useState(85);
 
-  const hoursSaved = Math.max(0, Math.round(monthlyHoursSpent * 0.85)); // 85% time savings
+  // Assumes about 85% less time spent. Values are not rounded until display.
+  const TIME_SAVED_SHARE = 0.85;
+  const hoursSaved = Math.max(0, monthlyHoursSpent * TIME_SAVED_SHARE);
+  const hoursRemaining = Math.max(0, monthlyHoursSpent - hoursSaved);
+  const minutesPerDay = Math.max(1, Math.round((hoursRemaining * 60) / 30));
   const monthlyMoneySaved = hoursSaved * hourlyValue;
   const annualMoneySaved = monthlyMoneySaved * 12;
+  const formatHours = (h: number) =>
+    Number.isInteger(h) ? String(h) : h.toFixed(1);
+  const formatDollars = (n: number) => Math.round(n).toLocaleString("en-US");
 
   const solutionsList = [
     {
@@ -26,6 +32,7 @@ export const SolutionsView: React.FC = () => {
         "Direct email/portal access to your account specialist",
       ],
       icon: "storefront",
+      cta: "Book a Call for Small Business",
     },
     {
       id: "agencies",
@@ -39,6 +46,7 @@ export const SolutionsView: React.FC = () => {
         "Quality assurance by senior bookkeeping specialists",
       ],
       icon: "domain",
+      cta: "Book a Call for Agencies",
     },
     {
       id: "ecommerce",
@@ -52,6 +60,7 @@ export const SolutionsView: React.FC = () => {
         "Automated merchant fee accounting",
       ],
       icon: "shopping_cart",
+      cta: "Book a Call for E-Commerce",
     },
   ];
 
@@ -113,13 +122,12 @@ export const SolutionsView: React.FC = () => {
               </ul>
             </div>
 
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
-              className="w-full text-xs font-semibold uppercase tracking-wider text-[#830036] border border-[#830036] py-3 rounded-full hover:bg-[#fbf1f2] transition-colors cursor-pointer"
+            <Link
+              href="/contact"
+              className="block w-full text-center text-xs font-semibold uppercase tracking-wider text-[#830036] border border-[#830036] py-3 rounded-full hover:bg-[#fbf1f2] transition-colors cursor-pointer"
             >
-              Explore {sol.title.split(" ")[1]} Solution
-            </button>
+              {sol.cta}
+            </Link>
           </div>
         ))}
       </div>
@@ -193,10 +201,11 @@ export const SolutionsView: React.FC = () => {
                 Reclaimed Founder Time
               </p>
               <p className="text-4xl font-extrabold text-white mt-1">
-                {hoursSaved} Hours / mo
+                {formatHours(hoursSaved)} Hours / mo
               </p>
               <p className="text-xs text-white/80 mt-1">
-                Reduced down to just 5 minutes a day.
+                Down to about {minutesPerDay} minute{minutesPerDay === 1 ? "" : "s"} a
+                day, based on an assumed 85% reduction.
               </p>
             </div>
 
@@ -205,22 +214,36 @@ export const SolutionsView: React.FC = () => {
                 Annual Value Created
               </p>
               <p className="text-3xl font-extrabold text-amber-300 mt-1">
-                ${annualMoneySaved.toLocaleString()} / year
+                ${formatDollars(annualMoneySaved)} / year
               </p>
               <p className="text-xs text-white/80 mt-1">
-                Based on ${monthlyMoneySaved.toLocaleString()}/mo in saved
+                Based on ${formatDollars(monthlyMoneySaved)}/mo in saved
                 founder capacity.
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={() => router.push("/contact")}
-              className="w-full bg-white text-[#830036] font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-amber-50 cursor-pointer shadow-md"
+            <Link
+              href="/contact"
+              className="block w-full text-center bg-white text-[#830036] font-bold text-xs uppercase tracking-wider py-3.5 rounded-full hover:bg-amber-50 cursor-pointer shadow-md"
             >
               Claim Your 5-Minute Savings
-            </button>
+            </Link>
           </div>
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            href="/tools"
+            className="inline-flex min-h-12 items-center gap-1.5 text-sm font-semibold text-[#830036] hover:text-[#a61d4c] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#830036]"
+          >
+            Explore other tools
+            <span
+              className="material-symbols-outlined text-lg"
+              aria-hidden="true"
+            >
+              arrow_forward
+            </span>
+          </Link>
         </div>
       </div>
 

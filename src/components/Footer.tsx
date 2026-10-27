@@ -157,7 +157,7 @@ export const Footer: React.FC = () => {
             href="/contact"
             className="text-sm text-[#584145] hover:text-[#830036] underline-offset-4 hover:underline transition-all cursor-pointer"
           >
-            Contact Support
+            Contact
           </Link>
           <Link
             href="/privacy-policy"

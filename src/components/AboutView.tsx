@@ -5,7 +5,7 @@ export const AboutView: React.FC = () => {
   const values = [
     {
       title: "Obsessive Precision",
-      desc: "Every single ledger entry is double-verified to ensure zero discrepancy down to the cent.",
+      desc: "Every ledger entry is double-checked for accuracy.",
       icon: "verified",
     },
     {

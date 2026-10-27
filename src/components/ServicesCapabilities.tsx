@@ -157,7 +157,8 @@ export const ServicesCapabilities: React.FC = () => {
         {CAPABILITIES.map((cap) => (
           <article
             key={cap.id}
-            className="bg-white rounded-3xl border border-[#dfbfc3]/40 shadow-xs hover:shadow-lg transition-shadow overflow-hidden"
+            id={cap.id}
+            className="scroll-mt-28 bg-white rounded-3xl border border-[#dfbfc3]/40 shadow-xs hover:shadow-lg transition-shadow overflow-hidden"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-6 sm:p-10">
               {/* Left: Intro */}
