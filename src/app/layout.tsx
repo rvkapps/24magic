@@ -12,7 +12,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://24magic.in"),
   title: {
-    default: "24MAGIC | Bookkeeping & Financial Precisions",
+    default: "24MAGIC | Bookkeeping & Financial Precision",
     template: "%s | 24MAGIC",
   },
   description:
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "24MAGIC",
-    title: "24MAGIC | Bookkeeping & Financial Precisions",
+    title: "24MAGIC | Bookkeeping & Financial Precision",
     description:
       "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "24MAGIC | Bookkeeping & Financial Precisions",
+    title: "24MAGIC | Bookkeeping & Financial Precision",
     description:
       "Build the life and business of your dreams. We transform complex financial data into clear, actionable insights with minimal effort on your part.",
     images: ["/og-image.jpg"],

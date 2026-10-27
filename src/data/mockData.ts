@@ -230,7 +230,7 @@ export const PLANS_DATA: PlanItem[] = [
     id: "starter",
     name: "Starter Precision",
     priceMonthly: 299,
-    priceAnnual: 249,
+    priceAnnual: 269,
     description:
       "Bookkeeping and monthly financial reporting for freelancers, solopreneurs, and early-stage businesses.",
     monthlyTxLimit: "Up to 75 monthly transactions",
@@ -246,7 +246,7 @@ export const PLANS_DATA: PlanItem[] = [
     id: "growth",
     name: "Growth & Scale",
     priceMonthly: 599,
-    priceAnnual: 499,
+    priceAnnual: 539,
     description:
       "Bookkeeping, reporting, and a dedicated specialist for growing small businesses and agencies.",
     monthlyTxLimit: "Up to 250 monthly transactions",
@@ -263,7 +263,7 @@ export const PLANS_DATA: PlanItem[] = [
     id: "enterprise",
     name: "Custom Magic",
     priceMonthly: 1199,
-    priceAnnual: 999,
+    priceAnnual: 1079,
     description:
       "Bookkeeping, reporting, and payroll support for multi-entity, e-commerce, and inventory-heavy businesses.",
     monthlyTxLimit: "Unlimited transactions within agreed scope",

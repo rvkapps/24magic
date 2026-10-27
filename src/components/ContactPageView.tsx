@@ -22,7 +22,7 @@ const faqs = [
     id: "c-faq-3",
     question: "Is my financial data safe?",
     answer:
-      "Absolutely. We use read-only bank connections, AES-256 encryption, and SOC 2 compliant infrastructure. Your data is never shared or sold.",
+      "Absolutely. We use read-only bank connections, and your data is never shared or sold.",
   },
 ];
 

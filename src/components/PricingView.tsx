@@ -56,7 +56,7 @@ export const PricingView: React.FC = () => {
           >
             Annual Billing
             <span className="bg-[#ffb55b] text-[#1f1a1b] text-[10px] font-extrabold px-2 py-0.5 rounded-full">
-              Save 20%
+              Save 10%
             </span>
           </button>
         </div>
