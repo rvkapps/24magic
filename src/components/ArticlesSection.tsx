@@ -10,7 +10,6 @@ interface ArticlesSectionProps {
 
 export const ArticlesSection: React.FC<ArticlesSectionProps> = ({
   onSelectArticle,
-  onViewAllResources,
 }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24">

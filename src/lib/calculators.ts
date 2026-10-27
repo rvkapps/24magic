@@ -131,7 +131,8 @@ export function profitMargin(input: {
 }) {
   const grossProfit = input.revenue - input.cogs;
   const netProfit = grossProfit - input.operatingExpenses;
-  const pct = (n: number) => (input.revenue > 0 ? (n / input.revenue) * 100 : 0);
+  const pct = (n: number) =>
+    input.revenue > 0 ? (n / input.revenue) * 100 : 0;
   return {
     grossProfit,
     netProfit,
@@ -235,7 +236,7 @@ export function marketplaceProfit(input: {
 // ---- formatting -----------------------------------------------------------
 
 export function parseNumber(value: string): number {
-  const cleaned = value.replace(/[^0-9.\-]/g, "");
+  const cleaned = value.replace(/[^0-9.-]/g, "");
   const n = Number.parseFloat(cleaned);
   return Number.isFinite(n) ? n : 0;
 }

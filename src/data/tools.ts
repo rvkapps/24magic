@@ -54,9 +54,7 @@ const CTA: Record<ToolCategoryId, { title: string; text: string }> = {
   },
 };
 
-const tool = (
-  t: Omit<ToolItem, "ctaTitle" | "ctaText">,
-): ToolItem => ({
+const tool = (t: Omit<ToolItem, "ctaTitle" | "ctaText">): ToolItem => ({
   ...t,
   ctaTitle: CTA[t.category].title,
   ctaText: CTA[t.category].text,
@@ -96,8 +94,7 @@ export const TOOLS: ToolItem[] = [
   tool({
     slug: "profit-margin-calculator",
     title: "Profit Margin Calculator",
-    description:
-      "Work out your gross and net profit margins and your markup.",
+    description: "Work out your gross and net profit margins and your markup.",
     metaDescription:
       "Free profit margin calculator. Enter revenue, cost of goods sold and expenses to see gross margin, net margin and markup.",
     category: "profitability",

@@ -14,8 +14,8 @@ import {
   parseNumber,
   quarterlyEstimate,
   SS_WAGE_BASE,
-  selfEmploymentTax,
   STANDARD_DEDUCTION,
+  selfEmploymentTax,
   TAX_YEAR,
 } from "@/lib/calculators";
 import {
@@ -23,8 +23,8 @@ import {
   EmptyResults,
   FILING_OPTIONS,
   Headline,
-  NumberField,
   Note,
+  NumberField,
   ResultRow,
   SelectField,
 } from "./ToolFields";
@@ -201,8 +201,7 @@ export const SelfEmploymentTaxCalculator: React.FC = () => {
             <Note>
               Based on {TAX_YEAR} rules, with Social Security tax applying up to{" "}
               {formatMoney(SS_WAGE_BASE, 0)} of combined earnings. This is an
-              estimate only and does not replace advice from a tax
-              professional.
+              estimate only and does not replace advice from a tax professional.
             </Note>
           </>
         ) : (

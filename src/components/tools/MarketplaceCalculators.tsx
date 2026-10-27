@@ -12,8 +12,8 @@ import {
   CalcLayout,
   EmptyResults,
   Headline,
-  NumberField,
   Note,
+  NumberField,
   ResultRow,
 } from "./ToolFields";
 
@@ -30,16 +30,24 @@ const MarketplaceResults: React.FC<MarketplaceResultsProps> = ({ r, note }) => (
       note={`${formatPercent(r.margin)} profit margin`}
     />
     <div>
-      <ResultRow label="Total received from buyer" value={formatMoney(r.revenue)} />
+      <ResultRow
+        label="Total received from buyer"
+        value={formatMoney(r.revenue)}
+      />
       <ResultRow label="Marketplace fees" value={formatMoney(r.fees)} />
-      <ResultRow label="Your costs (item and shipping)" value={formatMoney(r.costs)} />
+      <ResultRow
+        label="Your costs (item and shipping)"
+        value={formatMoney(r.costs)}
+      />
       <ResultRow
         label="Return on cost (ROI)"
         value={r.roi === null ? "n/a" : formatPercent(r.roi)}
       />
       <ResultRow
         label="Break-even item price"
-        value={r.breakEvenPrice === null ? "n/a" : formatMoney(r.breakEvenPrice)}
+        value={
+          r.breakEvenPrice === null ? "n/a" : formatMoney(r.breakEvenPrice)
+        }
       />
     </div>
     <Note>{note}</Note>

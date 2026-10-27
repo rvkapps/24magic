@@ -15,8 +15,8 @@ import {
   CalcLayout,
   EmptyResults,
   Headline,
-  NumberField,
   Note,
+  NumberField,
   ResultRow,
 } from "./ToolFields";
 
@@ -279,8 +279,8 @@ export const DebtToEquityCalculator: React.FC = () => {
                 />
               </div>
               <Note>
-                Ratios vary by industry, so compare with similar businesses.
-                The bands above are general rules of thumb, not advice.
+                Ratios vary by industry, so compare with similar businesses. The
+                bands above are general rules of thumb, not advice.
               </Note>
             </>
           ) : (
@@ -302,9 +302,13 @@ export const EbitdaCalculator: React.FC = () => {
   const [amortization, setAmortization] = useState("");
   const [revenue, setRevenue] = useState("");
 
-  const hasInput = [netIncome, interest, taxes, depreciation, amortization].some(
-    (v) => parseNumber(v) !== 0,
-  );
+  const hasInput = [
+    netIncome,
+    interest,
+    taxes,
+    depreciation,
+    amortization,
+  ].some((v) => parseNumber(v) !== 0);
   const r = ebitda({
     netIncome: parseNumber(netIncome),
     interest: parseNumber(interest),
@@ -370,7 +374,9 @@ export const EbitdaCalculator: React.FC = () => {
             <div>
               <ResultRow
                 label="EBITDA margin"
-                value={r.margin === null ? "Add revenue" : formatPercent(r.margin)}
+                value={
+                  r.margin === null ? "Add revenue" : formatPercent(r.margin)
+                }
               />
             </div>
             <Note>

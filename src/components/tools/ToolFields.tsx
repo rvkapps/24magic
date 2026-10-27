@@ -167,9 +167,9 @@ export const EmptyResults: React.FC<{ text?: string }> = ({
   </div>
 );
 
-export const Note: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => <p className="text-xs leading-relaxed text-[#584145]">{children}</p>;
+export const Note: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <p className="text-xs leading-relaxed text-[#584145]">{children}</p>
+);
 
 export const FILING_OPTIONS = [
   { value: "single", label: "Single" },

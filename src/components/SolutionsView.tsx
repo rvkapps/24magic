@@ -204,8 +204,9 @@ export const SolutionsView: React.FC = () => {
                 {formatHours(hoursSaved)} Hours / mo
               </p>
               <p className="text-xs text-white/80 mt-1">
-                Down to about {minutesPerDay} minute{minutesPerDay === 1 ? "" : "s"} a
-                day, based on an assumed 85% reduction.
+                Down to about {minutesPerDay} minute
+                {minutesPerDay === 1 ? "" : "s"} a day, based on an assumed 85%
+                reduction.
               </p>
             </div>
 
@@ -217,8 +218,8 @@ export const SolutionsView: React.FC = () => {
                 ${formatDollars(annualMoneySaved)} / year
               </p>
               <p className="text-xs text-white/80 mt-1">
-                Based on ${formatDollars(monthlyMoneySaved)}/mo in saved
-                founder capacity.
+                Based on ${formatDollars(monthlyMoneySaved)}/mo in saved founder
+                capacity.
               </p>
             </div>
 
