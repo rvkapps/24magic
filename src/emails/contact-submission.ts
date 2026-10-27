@@ -15,6 +15,7 @@ export interface ContactSubmissionData {
   monthlyTx: string;
   description: string;
   plan?: string;
+  reference?: string;
   source?: string;
 }
 
@@ -107,7 +108,7 @@ export const renderContactSubmissionEmail = (
                     <p style="margin:4px 0 0;font-size:14px;color:#1f1a1b;font-weight:600;">${d.monthlyTx}</p>
                   </td>
                 </tr>
-${extraRow("Plan of interest", data.plan)}${extraRow("Came from", data.source)}
+${extraRow("Reference", data.reference)}${extraRow("Plan of interest", data.plan)}${extraRow("Came from", data.source)}
                 <tr>
                   <td style="padding:12px 0;">
                     <p style="margin:0;font-size:10px;font-weight:700;color:#830036;text-transform:uppercase;letter-spacing:1px;">Message</p>

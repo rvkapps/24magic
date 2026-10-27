@@ -56,6 +56,8 @@ export async function POST(request: Request) {
     );
   }
 
+  const reference = `24M-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
+
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {
     console.error("RESEND_API_KEY is not configured.");
@@ -74,7 +76,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: [toEmail],
       replyTo: email,
-      subject: `New Contact Form Submission — ${fullName}`,
+      subject: `New Contact Form Submission [${reference}] — ${fullName}`,
       html: renderContactSubmissionEmail({
         fullName,
         email,
@@ -85,6 +87,7 @@ export async function POST(request: Request) {
         description,
         plan,
         source,
+        reference,
       }),
     });
 
@@ -106,7 +109,7 @@ export async function POST(request: Request) {
         subject: "Thank you for contacting 24MAGIC",
         html: renderContactAcknowledgementEmail({
           fullName,
-          reference: `24M-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`,
+          reference,
           service: serviceLabels[serviceKey] ?? serviceKey,
           description,
         }),
