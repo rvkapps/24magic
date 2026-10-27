@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { PLANS_DATA } from "@/data/mockData";
 import { TOOLS } from "@/data/tools";
+import { renderContactAcknowledgementEmail } from "@/emails/contact-acknowledgement";
 import { renderContactSubmissionEmail } from "@/emails/contact-submission";
 
 const serviceLabels: Record<string, string> = {
@@ -93,6 +94,26 @@ export async function POST(request: Request) {
         { error: "Failed to send your message. Please try again." },
         { status: 502 },
       );
+    }
+
+    // Confirmation to the visitor. A failure here must not fail the request,
+    // because the team has already received the enquiry.
+    try {
+      const { error: ackError } = await resend.emails.send({
+        from: fromEmail,
+        to: [email],
+        replyTo: toEmail,
+        subject: "Thank you for contacting 24MAGIC",
+        html: renderContactAcknowledgementEmail({
+          fullName,
+          reference: `24M-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`,
+          service: serviceLabels[serviceKey] ?? serviceKey,
+          description,
+        }),
+      });
+      if (ackError) console.error("Acknowledgement email error:", ackError);
+    } catch (ackErr) {
+      console.error("Acknowledgement email failed:", ackErr);
     }
 
     return NextResponse.json({ success: true, id: data?.id });
