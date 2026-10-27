@@ -16,9 +16,13 @@ export function ServicesPageView() {
     const scrollToHash = () => {
       const id = decodeURIComponent(window.location.hash.slice(1));
       if (!id) return;
-      document
-        .getElementById(id)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      const target = document.getElementById(id);
+      if (!target) return;
+      if (window.__lenis) {
+        window.__lenis.scrollTo(target, { offset: -112 });
+        return;
+      }
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     };
     const timer = window.setTimeout(scrollToHash, 150);
     window.addEventListener("hashchange", scrollToHash);

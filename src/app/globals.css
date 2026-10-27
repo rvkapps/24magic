@@ -536,3 +536,22 @@ body {
 .font-fill {
   font-variation-settings: "FILL" 1;
 }
+
+/* Lenis smooth scroll: required base rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  /* biome-ignore lint/complexity/noImportantStyles: required by Lenis to override native smooth scroll */
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
